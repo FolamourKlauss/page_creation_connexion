@@ -1,0 +1,19 @@
+{
+  "name": "back_end",
+  "version": "1.0.0",
+  "description": "creation and connexion page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FolamourKlauss/page_creation_connexion.git"
+  },
+  "author": "FolamourKlauss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FolamourKlauss/page_creation_connexion/issues"
+  },
+  "homepage": "https://github.com/FolamourKlauss/page_creation_connexion#readme"
+}
