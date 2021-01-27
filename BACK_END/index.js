@@ -6,15 +6,17 @@ const pg = require('pg');
 
 const client = new pg.Client(process.env.BDD_URL);
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-});
+// les fichiers statiques
+app.use(express.static('public'));
+
+// on rajoute la gestion des POST body
+app.use(express.urlencoded({extended: true}));
+
+// Le router
+const router = require('./app/router');
+app.use(router);
 
 
-if (client.connect()) {
-    console.log(`Connection à la base de données OK avec ${process.env.BDD_URL}`)
-}
- 
 
 
 // lancement du serveur
