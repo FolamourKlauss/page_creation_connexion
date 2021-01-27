@@ -8,17 +8,19 @@ const userController = {
     },
     loginAction: async (req, res) => {
         try {
+            console.log(req);
             //On tente de récupérer l'utilisateur qui possède l'email donné
             const user = await User.findOne({
                 where: {
-                    email: 'boblepong@gmale.cou'
+                    email: req.body.email
                 }
             });
+            console.log("voici" + req.body.email)
             if (!user) {
                 return res.send("cet email n'existe pas");
             }
             // et on repart sur la page d'accueil
-            return res.send("lemail bob leponge est ok");
+            return res.json({data: "lemail bob leponge est ok"});
         } catch (error) {
             console.trace(error);
             res.status(500).send(error);

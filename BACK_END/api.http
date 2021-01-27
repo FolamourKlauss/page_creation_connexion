@@ -11,9 +11,7 @@ POST {{host}}/login
 Content-Type: application/json
 
 {
-    "promo": "Nemo",
-    "saison": 6,
-    "au_taquet": true
+    "email": "boblepong@gmale.coum"
 }
 
 ###
