@@ -1,22 +1,15 @@
-const { Sequelize } = require('sequelize');
+/**
+ * On remplace le connecteur à la main pr une instance de sequelize
+ * il faudra passer cette instance à chacun de nos modèles pour pouvoir les initialiser
+ * 
+ */
+
+const {Sequelize} = require('sequelize');
 require('dotenv').config();
+const sequelize = new Sequelize(process.env.BDD_URL,{
+    define: {
+      timestamps: false
+    },
+});
 
-// Option 1: Passing a connection URI
-const sequelize = new Sequelize(`${process.env.BDD_URL}`, {
-
-  // disable logging; default: console.log
-  logging: false
-
-}); // Example for postgres
-
-//Connection
-async function connecCall () {
-  try {
-      await sequelize.authenticate();
-      console.log('Connection has been established successfully.');
-    } catch (error) {
-      console.error('Unable to connect to the database:', error);
-    };
-};
-
-connecCall();
+module.exports = sequelize;
