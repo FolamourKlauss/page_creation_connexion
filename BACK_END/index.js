@@ -26,6 +26,7 @@ app.use(session({
     }
 }));
 
+
 // et hop, notre middleware magique pas utile laurait ete si nous utilions la var locals et un generateur de template comme ejs par ex pour creer des vues dynamiques
 // const userMiddleware = require('./app/middlewares/userMiddle');
 // app.use(userMiddleware);
